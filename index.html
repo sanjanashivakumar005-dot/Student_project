@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Score Prediction</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+    <h2>Student Performance Prediction</h2>
+
+    <form action="/" method="post">
+        <label>Student Number:</label><br>
+        <select name="student_number" required>
+            <option value="">Select number</option>
+            {% for n in student_numbers %}
+                <option value="{{ n }}">{{ n }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Student Name:</label><br>
+        <select name="student_name" required>
+            <option value="">Select name</option>
+            <option value="Arjun">Arjun</option>
+            <option value="Sanjana">Sanjana</option>
+            <option value="Rahul">Rahul</option>
+            <option value="Priya">Priya</option>
+            <option value="Ayesha">Ayesha</option>
+            <!-- Add more as needed -->
+        </select><br><br>
+
+        <label>Roll Number:</label><br>
+        <select name="roll_number" required>
+            <option value="">Select roll</option>
+            {% for r in roll_numbers %}
+                <option value="{{ r }}">{{ r }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Class:</label><br>
+        <select name="student_class" required>
+            <option value="">Select class</option>
+            {% for c in classes %}
+                <option value="{{ c }}">{{ c }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Study Hours:</label><br>
+        <select name="hours" required>
+            <option value="">Select hours</option>
+            {% for h in study_hours %}
+                <option value="{{ h }}">{{ h }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Attendance (%):</label><br>
+        <select name="attendance" required>
+            <option value="">Select attendance</option>
+            {% for a in attendance_options %}
+                <option value="{{ a }}">{{ a }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Predict Score</button>
+    </form>
+
+    <h3>{{ result|safe }}</h3>
+</body>
+</html>
